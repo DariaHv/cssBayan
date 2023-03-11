@@ -43,7 +43,37 @@ h1{
     flex-direction: column;
     justify-content: left;
 }
-.meme-img {
+.accordion img {
+    width:52%;
+    align-self: center;
+    display: none;
+}
+
+
+
+.accordion input{
+    display: none;
+}
+
+
+.accordion input:checked ~ img{
+    display:block;
+    width:52%;
+    align-self: center;
+}
+
+.meme:hover{
+    background-color: crimson;
+}
+.meme:hover > img{
+    display:block;
+    width:52%;
+    align-self: center;
+}
+
+
+input:hover > label img{
+    display:block;
     width:52%;
     align-self: center;
 }
