@@ -6,24 +6,16 @@ body {
     font-style: normal;
     font-weight: 700;
     font-stretch:extra-expanded;
-
-}
-main {
-    margin:auto;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top:4%;
+    padding-top: 3%;
 }
 .accordion {
-    width:80%;
+    width:90rem;
     margin:auto;
 }
 hr {
   flex-grow: 1;
     color: #f6f6ee;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    margin: 0 0 0 0;
 }
 
 h1{
@@ -36,6 +28,7 @@ h1{
     color: #010201;
     font-size: 200%;
     font-stretch: expanded;
+    padding-bottom: 3%;
 }
 
 .meme{
@@ -43,37 +36,74 @@ h1{
     flex-direction: column;
     justify-content: left;
 }
+label {
+    padding-top:3%;
+    display:flex;
+    flex-direction: column;
+}
+
 .accordion img {
-    width:52%;
+    width:50%;
     align-self: center;
     display: none;
 }
-
 
 
 .accordion input{
     display: none;
 }
 
-
-.accordion input:checked ~ img{
+input:checked ~ label img{
     display:block;
-    width:52%;
     align-self: center;
 }
-
-.meme:hover{
-    background-color: crimson;
-}
-.meme:hover > img{
+input:checked ~ label .mn{
     display:block;
-    width:52%;
-    align-self: center;
+}
+input:checked ~ label .pl{
+    visibility:hidden;
+}
+
+label:active > img{
+    filter: blur(4px);
+}
+.vis {
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+    padding-bottom: 3%;
+}
+.pl {
+}
+
+.mn {
+    display:none;
+    }
+.meme * {
+    cursor: pointer;
+}
+.meme:active * {
+    cursor: grabbing;
 }
 
 
-input:hover > label img{
+@media (hover: hover) {
+    
+  .icon{
+    display:none;
+}
+    
+  .accordion:hover .icon{
+      display:flex;
+  }
+  label:hover .mn{
     display:block;
-    width:52%;
-    align-self: center;
-}
+  }
+  label:hover .pl{
+    visibility:hidden;
+  }
+  label:hover > img{
+      display:block;
+      align-self: center;
+  }
+  }
